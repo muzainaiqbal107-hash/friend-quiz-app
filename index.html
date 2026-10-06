@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Best Friend Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="pink-orb orb-one"></div>
+    <div class="pink-orb orb-two"></div>
+    <div class="pink-orb orb-three"></div>
+
+    <main class="app">
+
+        <section class="screen active" id="homeScreen">
+            <div class="card welcome-card">
+                <div class="bear-sticker bear-top">
+                    <div class="bear-ear left"></div>
+                    <div class="bear-ear right"></div>
+                    <div class="bear-face">
+                        <span class="eye left-eye"></span>
+                        <span class="eye right-eye"></span>
+                        <span class="blush left-blush"></span>
+                        <span class="blush right-blush"></span>
+                        <span class="bear-mouth">⌣</span>
+                    </div>
+                </div>
+
+                <span class="mini-label">MOCHI FRIEND QUIZ</span>
+
+                <h1>Let's Find Out<br><span>Who Knows You Best?</span></h1>
+
+                <p class="intro-text">
+                    Create a cute little quiz and send it to your friends
+                    to discover who is your real best friend.
+                </p>
+
+                <div class="input-group">
+                    <label for="creatorName">Enter Your Name</label>
+                    <input id="creatorName" type="text" maxlength="24" placeholder="e.g. Azka">
+                </div>
+
+                <button class="primary-btn" id="createQuizBtn">
+                    Ready
+                    <span>♡</span>
+                </button>
+
+                <div class="tiny-bears">
+                    <span>ʕ•ᴥ•ʔ</span>
+                    <span>ʕᵔᴥᵔʔ</span>
+                    <span>ʕ•́ᴥ•̀ʔ</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="builderScreen">
+            <div class="builder-wrapper">
+
+                <div class="builder-header">
+                    <div>
+                        <span class="mini-label">QUIZ CREATOR</span>
+                        <h2><span id="builderName">Azka</span>'s Quiz</h2>
+                    </div>
+
+                    <div class="question-counter">
+                        <span id="builderNumber">01</span>
+                        <small>/ 08</small>
+                    </div>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="builderProgress"></div>
+                </div>
+
+                <div class="card question-builder-card">
+
+                    <div class="bear-mini">
+                        <div class="mini-ear"></div>
+                        <div class="mini-ear second"></div>
+                        <div class="mini-face">
+                            <span>•</span>
+                            <span>•</span>
+                            <b>ᴗ</b>
+                        </div>
+                    </div>
+
+                    <label for="questionInput">Write Your Question</label>
+
+                    <input id="questionInput" class="question-input" type="text" maxlength="120"
+                        placeholder="e.g. What is {{name}}'s favourite color?">
+
+                    <p class="input-hint">
+                        Use <strong>{{name}}</strong> anywhere and your name will appear automatically.
+                    </p>
+
+                    <div class="options-title">
+                        <span>Choose the correct answer</span>
+                        <small>5 marks</small>
+                    </div>
+
+                    <div class="options-editor" id="optionsEditor">
+
+                        <button class="answer-option" data-index="0">
+                            <span class="option-letter">A</span>
+                            <input type="text" maxlength="40" placeholder="Option A">
+                            <span class="correct-dot"></span>
+                        </button>
+
+                        <button class="answer-option" data-index="1">
+                            <span class="option-letter">B</span>
+                            <input type="text" maxlength="40" placeholder="Option B">
+                            <span class="correct-dot"></span>
+                        </button>
+
+                        <button class="answer-option" data-index="2">
+                            <span class="option-letter">C</span>
+                            <input type="text" maxlength="40" placeholder="Option C">
+                            <span class="correct-dot"></span>
+                        </button>
+
+                        <button class="answer-option" data-index="3">
+                            <span class="option-letter">D</span>
+                            <input type="text" maxlength="40" placeholder="Option D">
+                            <span class="correct-dot"></span>
+                        </button>
+
+                    </div>
+
+                    <div class="builder-actions">
+                        <button class="secondary-btn" id="previousQuestionBtn">Back</button>
+                        <button class="primary-btn small-btn" id="nextQuestionBtn">
+                            Next
+                            <span>→</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="shareScreen">
+            <div class="card share-card">
+
+                <div class="success-badge">QUIZ READY</div>
+
+                <div class="gift-bear">
+                    <div class="gift-ear left"></div>
+                    <div class="gift-ear right"></div>
+                    <div class="gift-head">
+                        <div class="gift-eye eye-one"></div>
+                        <div class="gift-eye eye-two"></div>
+                        <div class="gift-cheek cheek-one"></div>
+                        <div class="gift-cheek cheek-two"></div>
+                        <div class="gift-mouth">ᴗ</div>
+                    </div>
+                    <div class="gift-box">
+                        <span></span>
+                    </div>
+                </div>
+
+                <h2>Your Quiz Is Ready!</h2>
+
+                <p>
+                    Send this quiz to your friends and discover
+                    who actually knows <strong id="shareName">you</strong>.
+                </p>
+
+                <div class="share-box">
+                    <input id="shareLink" readonly>
+                    <button id="copyLinkBtn">Copy Link</button>
+                </div>
+
+                <div class="share-buttons">
+                    <button class="primary-btn" id="previewQuizBtn">
+                        See Quiz Yourself
+                    </button>
+
+                    <button class="secondary-btn" id="newQuizBtn">
+                        Create New Quiz
+                    </button>
+                </div>
+
+                <div class="share-note">
+                    8 Questions · 5 Marks Each · 40 Total Marks
+                </div>
+
+            </div>
+        </section>
+
+        <section class="screen" id="playerWelcomeScreen">
+            <div class="card player-welcome-card">
+
+                <div class="floating-heart heart-one">♥</div>
+                <div class="floating-heart heart-two">♥</div>
+
+                <div class="player-bear">
+                    <div class="bear-ear left"></div>
+                    <div class="bear-ear right"></div>
+                    <div class="bear-face">
+                        <span class="eye left-eye"></span>
+                        <span class="eye right-eye"></span>
+                        <span class="blush left-blush"></span>
+                        <span class="blush right-blush"></span>
+                        <span class="bear-mouth">⌣</span>
+                    </div>
+                </div>
+
+                <span class="mini-label">A LITTLE QUIZ FOR YOU</span>
+
+                <h1>Hi, I'm <span id="playerCreatorName">Azka</span>!</h1>
+
+                <p class="player-message">
+                    I want to know who my fake friend is
+                    and who my best friend is.
+                </p>
+
+                <button class="primary-btn" id="playerReadyBtn">
+                    Ready
+                    <span>♡</span>
+                </button>
+
+            </div>
+        </section>
+
+        <section class="screen" id="quizScreen">
+            <div class="quiz-wrapper">
+
+                <div class="quiz-top">
+                    <div>
+                        <span class="mini-label">MOCHI QUIZ</span>
+                        <h2 id="quizQuestionNumber">Question 01</h2>
+                    </div>
+
+                    <div class="live-score">
+                        <span>Score</span>
+                        <strong id="liveScore">0</strong>
+                    </div>
+                </div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="quizProgress"></div>
+                </div>
+
+                <div class="card quiz-card">
+
+                    <div class="question-bear">
+                        <div class="q-ear left"></div>
+                        <div class="q-ear right"></div>
+                        <div class="q-face">
+                            <span>•</span>
+                            <span>•</span>
+                            <b>ᴗ</b>
+                        </div>
+                    </div>
+
+                    <h1 id="quizQuestion"></h1>
+
+                    <div class="quiz-options" id="quizOptions"></div>
+
+                    <button class="primary-btn next-answer-btn" id="nextAnswerBtn" disabled>
+                        Next Question
+                        <span>→</span>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="screen" id="resultScreen">
+            <div class="card result-card">
+
+                <span class="mini-label">QUIZ COMPLETE</span>
+
+                <div class="result-bear" id="resultBear">
+                    <div class="result-ear left"></div>
+                    <div class="result-ear right"></div>
+                    <div class="result-face">
+                        <span class="result-eye one"></span>
+                        <span class="result-eye two"></span>
+                        <span class="result-cheek one"></span>
+                        <span class="result-cheek two"></span>
+                        <span class="result-mouth">ᴗ</span>
+                    </div>
+                    <div class="result-gift">
+                        <span></span>
+                    </div>
+                </div>
+
+                <h1 id="resultTitle">Best Friend!</h1>
+
+                <p id="resultDescription"></p>
+
+                <div class="score-circle">
+                    <strong id="finalScore">0</strong>
+                    <span>/ 40</span>
+                </div>
+
+                <div class="score-list" id="scoreList"></div>
+
+                <div class="result-actions">
+                    <button class="primary-btn" id="giftMessageBtn">
+                        Open Gift
+                        <span>♡</span>
+                    </button>
+
+                    <button class="secondary-btn" id="resultHomeBtn">
+                        Back To Home
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="modal-overlay" id="thankYouModal">
+            <div class="card thank-you-card">
+
+                <button class="close-modal" id="closeModal">×</button>
+
+                <div class="modal-bear">
+                    <div class="modal-ear left"></div>
+                    <div class="modal-ear right"></div>
+                    <div class="modal-face">
+                        <span>•</span>
+                        <span>•</span>
+                        <b>ᴗ</b>
+                    </div>
+                    <div class="modal-gift"></div>
+                </div>
+
+                <span class="mini-label">A LITTLE MESSAGE</span>
+
+                <h2>Thank You!</h2>
+
+                <p>
+                    Thank you for taking this little quiz.
+                    Whether you're a friend or a best friend,
+                    you made this tiny quiz a little more special.
+                </p>
+
+                <button class="primary-btn" id="modalHomeBtn">
+                    Back To Home
+                </button>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
